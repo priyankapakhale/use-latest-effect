@@ -1,3 +1,5 @@
+[![npm version](https://img.shields.io/npm/v/use-latest-effect.svg)](https://www.npmjs.com/package/use-latest-effect) [![Build Status](https://github.com/priyankapakhale/use-latest-effect/actions/workflows/ci.yml/badge.svg)](https://github.com/priyankapakhale/use-latest-effect/actions)
+
 # use-latest-effect
 
 > A React hook for async effects that ensures only the latest invocation completes and optionally aborts stale runs.
