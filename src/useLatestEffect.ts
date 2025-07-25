@@ -1,7 +1,7 @@
 import { useEffect, useRef, DependencyList } from "react";
 
 export interface UseLatestEffectOptions {
-  abortable?: boolean; // default: false
+  abortable?: boolean; // default: true
   cleanup?: () => void;
 }
 
@@ -11,9 +11,9 @@ export function useLatestEffect(
     signal: AbortSignal
   ) => Promise<void> | void,
   deps: DependencyList,
-  options?: { cleanup?: () => void }
+  options: UseLatestEffectOptions = {}
 ) {
-  const { cleanup } = options || {};
+  const { abortable = true, cleanup } = options;
   const latestRef = useRef(0);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ export function useLatestEffect(
 
     return () => {
       cancelled = true;
-      controller.abort();
+      if (abortable) controller.abort();
       cleanup?.();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
