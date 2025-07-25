@@ -1,6 +1,6 @@
 {
   "name": "use-latest-effect",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A React hook for async effects that ensures only the latest invocation completes and optionally aborts stale runs.",
   "main": "dist/src/index.js",
   "module": "dist/src/index.js",
