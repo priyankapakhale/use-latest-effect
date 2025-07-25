@@ -38,7 +38,9 @@ export function useLatestEffect(
 
     return () => {
       cancelled = true;
-      if (abortable) controller.abort();
+      if (abortable) {
+        controller.abort();
+      }
       cleanup?.();
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
