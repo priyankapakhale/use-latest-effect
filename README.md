@@ -1,6 +1,6 @@
 # use-latest-effect
 
-> A React hook that runs async effects but only keeps the latest invocation (with optional abort of stale runs).
+> A React hook for async effects that ensures only the latest invocation completes and optionally aborts stale runs.
 
 ## 🧩 Installation
 

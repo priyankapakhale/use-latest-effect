@@ -1,10 +1,10 @@
 {
   "name": "use-latest-effect",
   "version": "1.0.0",
-  "description": "A React hook that runs async effects but only keeps the latest invocation (with optional AbortSignal).",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "description": "A React hook for async effects that ensures only the latest invocation completes and optionally aborts stale runs.",
+  "main": "dist/src/index.js",
+  "module": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "directories": {
     "test": "tests"
   },
@@ -32,7 +32,30 @@
     "tsup": "^8.5.0",
     "typescript": "^5.8.3"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "react",
+    "hook",
+    "async",
+    "abort",
+    "latest",
+    "useEffect",
+    "useLatestEffect",
+    "abortable"
+  ],
+  "author": "Priyanka Pakhale",
+  "url": "https://github.com/priyankapakhale/use-latest-effect",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/priyankapakhale/use-latest-effect.git"
+  },
+  "bugs": {
+    "url": "https://github.com/priyankapakhale/use-latest-effect/issues"
+  },
+  "homepage": "https://github.com/priyankapakhale/use-latest-effect#readme",
+  "files": [
+    "dist/",
+    "README.md",
+    "LICENSE"
+  ]
 }
