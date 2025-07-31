@@ -2,7 +2,30 @@
 
 # use-latest-effect
 
-> A React hook for async effects that ensures only the latest invocation completes and optionally aborts stale runs.
+> A tiny React hook to manage async effects safely solves race conditions and stale state updates, with abort support.
+
+## ⚡️ Why use-latest-effect?
+
+**Async logic in React’s `useEffect` often causes**:
+
+- **Race conditions:** Old async calls overwrite new data.
+- **Stale closures:** Effects run with outdated state/props.
+- **No built-in abort:** You manually handle canceling fetches.
+
+**use-latest-effect** solves all of this—**only your latest async effect can update state**, and stale runs are aborted automatically (optional).
+
+
+## 🐞 Problem Example
+
+```tsx
+useEffect(() => {
+  let active = true;
+  fetchUser(userId).then((user) => {
+    if (active) setUser(user); // can still race!
+  });
+  return () => { active = false; };
+}, [userId]);
+```
 
 ## 🧩 Installation
 
